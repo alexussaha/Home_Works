@@ -1,6 +1,14 @@
 ﻿using System;
 
+/*    Усов Александр
 
+    3. *Описать класс дробей - рациональных чисел, являющихся отношением двух целых чисел. Предусмотреть методы сложения, вычитания, умножения и деления дробей. Написать программу, демонстрирующую все разработанные элементы класса. Достаточно решить 2 задачи. Все программы сделать в одном решении.
+    ** Добавить проверку, чтобы знаменатель не равнялся 0. Выбрасывать исключение
+    ArgumentException("Знаменатель не может быть равен 0");
+    Добавить упрощение дробей.
+
+
+*/
 namespace Task_3
 {
     class Fraction
@@ -150,12 +158,17 @@ namespace Task_3
         {
             set
             {
-                denumerator = value;
+                if (value == 0) throw new ArgumentException("Знаменатель не может быть равен нулю");
+               else  denumerator = value;
             }
         }
         public void Print()
         {
             Console.WriteLine($"   {numerator}/{denumerator}  ");
+        }
+        public double GetDouble()
+        {
+            return (double) numerator / denumerator;
         }
     }
     class Program
@@ -165,27 +178,42 @@ namespace Task_3
             Fraction A = new Fraction();
             Fraction B = new Fraction();
             Fraction C = new Fraction();
-            A.Numerator = 1;
-            A.Denumerator = 2;
-            B.Numerator = 1;
-            B.Denumerator = 3;
+            Console.WriteLine("Введите первую дробь");
+            Console.WriteLine("Введите числитель: ");
+            A.Numerator = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите знаменатель: ");
+            A.Denumerator = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите вторую дробь");
+            Console.WriteLine("Введите числитель: ");
+            B.Numerator = int.Parse(Console.ReadLine());
+            Console.WriteLine("Введите знаменатель: ");
+            B.Denumerator = int.Parse(Console.ReadLine());
+            Console.WriteLine("Сумма: ");
             C = A.Plus(B);
             C.Print();
+            Console.WriteLine("Разность: ");
             C = A.Minus(B);
             C.Print();
+            Console.WriteLine("Произведение: ");
             C = A.Multy(B);
             C.Print();
+            Console.WriteLine("Деление: ");
             C = A.Devide(B);
             C.Print();
             Console.WriteLine("Выражения при помощи переопределения операторов:");
+            Console.WriteLine("Сумма: ");
             C = A + B;
             C.Print();
+            Console.WriteLine("Разность: ");
             C = A - B;
             C.Print();
+            Console.WriteLine("Произведение: ");
             C = A * B;
             C.Print();
+            Console.WriteLine("Деление: ");
             C = A / B;
             C.Print();
+            Console.WriteLine(C.GetDouble());
             Console.ReadKey();
         }
     }

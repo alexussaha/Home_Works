@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+/*  Усов Александр
+ * 1. а) Дописать структуру Complex, добавив метод вычитания комплексных чисел. Продемонстрировать работу структуры;
+ * 
+ * 
+ * 
+*/
 namespace Task_1
 {
     struct Complex
