@@ -29,18 +29,22 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCount = new System.Windows.Forms.Label();
+            this.lblDisplayTheNum = new System.Windows.Forms.Label();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.lblDisplay = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnMulti = new System.Windows.Forms.Button();
             this.btnPlus = new System.Windows.Forms.Button();
-            this.lblDisplayTheNum = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblCount);
             this.groupBox1.Controls.Add(this.lblDisplayTheNum);
             this.groupBox1.Controls.Add(this.btnPlay);
             this.groupBox1.Controls.Add(this.btnReset);
@@ -54,6 +58,24 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // lblCount
+            // 
+            this.lblCount.AutoSize = true;
+            this.lblCount.Location = new System.Drawing.Point(163, 132);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(16, 17);
+            this.lblCount.TabIndex = 7;
+            this.lblCount.Text = "0";
+            // 
+            // lblDisplayTheNum
+            // 
+            this.lblDisplayTheNum.AutoSize = true;
+            this.lblDisplayTheNum.Location = new System.Drawing.Point(163, 72);
+            this.lblDisplayTheNum.Name = "lblDisplayTheNum";
+            this.lblDisplayTheNum.Size = new System.Drawing.Size(16, 17);
+            this.lblDisplayTheNum.TabIndex = 6;
+            this.lblDisplayTheNum.Text = "0";
+            // 
             // btnPlay
             // 
             this.btnPlay.Location = new System.Drawing.Point(87, 188);
@@ -66,6 +88,7 @@
             // 
             // btnReset
             // 
+            this.btnReset.Enabled = false;
             this.btnReset.Location = new System.Drawing.Point(6, 188);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(75, 58);
@@ -79,12 +102,13 @@
             this.lblDisplay.AutoSize = true;
             this.lblDisplay.Location = new System.Drawing.Point(160, 28);
             this.lblDisplay.Name = "lblDisplay";
-            this.lblDisplay.Size = new System.Drawing.Size(46, 17);
+            this.lblDisplay.Size = new System.Drawing.Size(16, 17);
             this.lblDisplay.TabIndex = 3;
-            this.lblDisplay.Text = "label1";
+            this.lblDisplay.Text = "0";
             // 
             // btnBack
             // 
+            this.btnBack.Enabled = false;
             this.btnBack.Location = new System.Drawing.Point(7, 132);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 50);
@@ -95,6 +119,7 @@
             // 
             // btnMulti
             // 
+            this.btnMulti.Enabled = false;
             this.btnMulti.Location = new System.Drawing.Point(7, 72);
             this.btnMulti.Name = "btnMulti";
             this.btnMulti.Size = new System.Drawing.Size(75, 54);
@@ -105,6 +130,7 @@
             // 
             // btnPlus
             // 
+            this.btnPlus.Enabled = false;
             this.btnPlus.Location = new System.Drawing.Point(7, 22);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(75, 44);
@@ -113,14 +139,14 @@
             this.btnPlus.UseVisualStyleBackColor = true;
             this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
-            // lblDisplayTheNum
+            // label1
             // 
-            this.lblDisplayTheNum.AutoSize = true;
-            this.lblDisplayTheNum.Location = new System.Drawing.Point(163, 72);
-            this.lblDisplayTheNum.Name = "lblDisplayTheNum";
-            this.lblDisplayTheNum.Size = new System.Drawing.Size(46, 17);
-            this.lblDisplayTheNum.TabIndex = 6;
-            this.lblDisplayTheNum.Text = "label1";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(99, 109);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 17);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Колличество ходов:";
             // 
             // Form1
             // 
@@ -129,7 +155,7 @@
             this.ClientSize = new System.Drawing.Size(306, 301);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Удвоитель";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -146,6 +172,8 @@
         private System.Windows.Forms.Button btnMulti;
         private System.Windows.Forms.Button btnPlus;
         private System.Windows.Forms.Label lblDisplayTheNum;
+        private System.Windows.Forms.Label lblCount;
+        private System.Windows.Forms.Label label1;
     }
 }
 

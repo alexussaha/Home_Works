@@ -47,8 +47,10 @@ namespace Task_1
 
         public void Back()
         {
-            list.RemoveAt(list.Count-1);
-            current = list.Last();
+            if (list.Count >= 2){
+                list.RemoveAt(list.Count - 1);
+                current = list.Last();
+            }
         }
 
     }

@@ -14,6 +14,7 @@ namespace Task_1
     {
 
         Udvoitel game;
+        int count = 0;
         
 
         public Form1()
@@ -30,6 +31,11 @@ namespace Task_1
             game = new Udvoitel(rnd.Next(50,201));
             lblDisplay.Text = game.Current.ToString();
             lblDisplayTheNum.Text = game.Number.ToString();
+            btnBack.Enabled = true;
+            btnPlus.Enabled = true;
+            btnMulti.Enabled = true;
+            btnReset.Enabled = true;
+            count = 0;
            
         }
 
@@ -39,9 +45,14 @@ namespace Task_1
             {
                 MessageBox.Show("Начни игру!");
                 return;
+
             }
+            
             game.Plus();
+
             lblDisplay.Text = game.Current.ToString();
+            count++;
+            lblCount.Text = count.ToString();
            
         }
 
@@ -52,9 +63,12 @@ namespace Task_1
                 MessageBox.Show("Начни игру!");
                 return;
             }
+            
             game.Multi();
             lblDisplay.Text = game.Current.ToString();
-            
+            count++;
+            lblCount.Text = count.ToString();
+
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -66,7 +80,8 @@ namespace Task_1
             }
             game.Reset();
             lblDisplay.Text = game.Current.ToString();
-           
+            count = 0;
+            lblCount.Text = count.ToString();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -78,8 +93,14 @@ namespace Task_1
             }
             game.Back();
             lblDisplay.Text = game.Current.ToString();
-
+            if (count > 1)
+            {
+                count--;
+            }
+            lblCount.Text = count.ToString();
 
         }
+
+        
     }
 }
